@@ -26,9 +26,12 @@ function renderDots() {
 
 function renderAmbientDots() {
     'use strict';
-
+    var dx = 0,
+    	dy = 0,
+    	i = 1,
+    	angle = null;
     context.save();
-    //DO AMBIENT STUFF HERE
+    context.translate(canvas.width / 2, canvas.height / 2);
 }
 
 function renderNeedle(angle, radius) {
@@ -132,7 +135,7 @@ function getDate() {
 
     var date;
     try {
-        date = tizen.time.getCurrentDateTime();
+    	date = new Date();
     } catch (err) {
         console.error('Error: ', err.message);
         date = new Date();
